@@ -3,12 +3,12 @@ from pyo import *
 if __name__ == '__main__':
 	s = Server(audio="offline")
 	s.boot()
-	s.recordOptions(dur=30, filename="testukas.wav")
+	s.recordOptions(dur=10, filename="testukas.wav")
 	wav = SquareTable()
 
 	first = 100
 	second = 500
-	bbb = 0.125
+	bbb = 0.25
 	min, max = 47, 47
 
 	beat = Metro(time=bbb, poly=1).play()
