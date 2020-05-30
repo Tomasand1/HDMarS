@@ -292,15 +292,8 @@ PODS:
     - React-cxxreact (= 0.62.2)
     - React-jsi (= 0.62.2)
     - ReactCommon/callinvoker (= 0.62.2)
-  - ReactNativeAudioToolkit (2.0.3):
-    - React
   - rn-fetch-blob (0.12.0):
     - React-Core
-  - RNSound (0.11.0):
-    - React
-    - RNSound/Core (= 0.11.0)
-  - RNSound/Core (0.11.0):
-    - React
   - RNSoundPlayer (0.10.4):
     - React
   - Yoga (1.14.0)
@@ -354,9 +347,7 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - ReactCommon/callinvoker (from `../node_modules/react-native/ReactCommon`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
-  - "ReactNativeAudioToolkit (from `../node_modules/@react-native-community/audio-toolkit`)"
   - rn-fetch-blob (from `../node_modules/rn-fetch-blob`)
-  - RNSound (from `../node_modules/react-native-sound`)
   - RNSoundPlayer (from `../node_modules/react-native-sound-player`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -424,12 +415,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/Libraries/Vibration"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
-  ReactNativeAudioToolkit:
-    :path: "../node_modules/@react-native-community/audio-toolkit"
   rn-fetch-blob:
     :path: "../node_modules/rn-fetch-blob"
-  RNSound:
-    :path: "../node_modules/react-native-sound"
   RNSoundPlayer:
     :path: "../node_modules/react-native-sound-player"
   Yoga:
@@ -471,13 +458,11 @@ SPEC CHECKSUMS:
   React-RCTText: fae545b10cfdb3d247c36c56f61a94cfd6dba41d
   React-RCTVibration: 4356114dbcba4ce66991096e51a66e61eda51256
   ReactCommon: ed4e11d27609d571e7eee8b65548efc191116eb3
-  ReactNativeAudioToolkit: e3e27fbcd12080f54f8715c54de7a232d3beb98d
   rn-fetch-blob: f065bb7ab7fb48dd002629f8bdcb0336602d3cba
-  RNSound: c980916b596cc15c8dcd2f6ecd3b13c4881dbe20
   RNSoundPlayer: b55bbb1b4cbf8b3f2c81db622d9db4b305407f5b
   Yoga: 3ebccbdd559724312790e7742142d062476b698e
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
 PODFILE CHECKSUM: 87b4f51d8eb278894733f9645b7a2c48474a4889
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.2

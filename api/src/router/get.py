@@ -1,10 +1,12 @@
 import io
 import os
+import urllib.request
 
+import requests
 from PIL import Image
-from flask import request, send_file
+from flask import request, send_file, jsonify
 from src import app
-from src.image_processor.process_image import process_image
+from src.image_processor.process_image import process_image, process_image_download
 from pydub import AudioSegment
 
 
@@ -24,9 +26,11 @@ def process():
 
 @app.route('/process-url', methods=["POST"])
 def url():
-    average_time = request.data
-    print(average_time)
-    return "url received %s" % average_time
+    average_time = request.headers
+    print((average_time['url']))
+    process_image_download(average_time['url'])
+
+    return "average_time"
 
 
 @app.route('/play')

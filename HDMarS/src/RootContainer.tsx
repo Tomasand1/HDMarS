@@ -6,7 +6,7 @@ import Metrics from './Theme/Global/Metrics';
 import Colors from './Theme/Global/Colors';
 import ImageTouchable from './Components/ImageTouchable';
 import { topMessage } from './Components/Global/TopMessage';
-import { post, processUrl } from './Functions/router';
+import { processUrl } from './Functions/router';
 // import AppNavigation from '../Navigation/AppNavigation';
 import SoundPlayer from 'react-native-sound-player';
 
@@ -44,7 +44,8 @@ const RootContainer = () => {
 
     const postImage = async (imageURL: any) => {
         topMessage('POST');
-        await post(imageURL);
+        // await post(imageURL);
+        await processUrl(imageURL);
         playFile();
         getInfo();
     };
@@ -52,7 +53,7 @@ const RootContainer = () => {
     const playFile = () => {
         try {
             topMessage('PLAY', '', 'success');
-            SoundPlayer.playUrl('https://a115cfabd0df.ngrok.io/play');
+            SoundPlayer.playUrl('https://ac932859160d.ngrok.io/play');
         } catch (err) {
             console.log('cannot play the sound file', err);
             topMessage(`${err}`);
