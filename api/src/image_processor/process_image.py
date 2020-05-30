@@ -7,7 +7,7 @@ from skimage.filters import gaussian
 
 matplotlib.rcParams['font.size'] = 18
 
-image = io.imread('../api/assets/color.png')
+image = io.imread('../assets/color.png')
 
 
 def process_image_grey():
@@ -25,7 +25,7 @@ def process_image_grey():
     else:
         plt.imshow(image)
 
-    plt.show()
+    # plt.show()
     
     return rgb2gray(image)
 
