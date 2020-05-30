@@ -34,6 +34,7 @@ const RootContainer = () => {
 
     const stopFile = () => {
         try {
+            topMessage('STOP');
             SoundPlayer.stop();
         } catch (err) {
             console.log('cannot pause the sound file', err);
@@ -42,7 +43,7 @@ const RootContainer = () => {
     };
 
     const postImage = async (imageURL: any) => {
-        topMessage('Pressed');
+        topMessage('POST');
         await post(imageURL);
         playFile();
         getInfo();
@@ -50,8 +51,8 @@ const RootContainer = () => {
 
     const playFile = () => {
         try {
+            topMessage('PLAY', '', 'success');
             SoundPlayer.playUrl('https://a115cfabd0df.ngrok.io/play');
-            topMessage('playing');
         } catch (err) {
             console.log('cannot play the sound file', err);
             topMessage(`${err}`);
@@ -68,7 +69,7 @@ const RootContainer = () => {
     };
 
     const changeBG = () => {
-        let bg = 'red';
+        let bg = Colors.assetColors.white;
         if (isPressed) {
             bg = 'cyan';
         }
