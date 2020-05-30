@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc3b01de-4545-4d25-a6c4-13d8da748d0d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/router/get.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/music_processor/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/api.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +49,35 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="api" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/music_processor" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/music_processor/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -65,6 +91,8 @@
       <workItem from="1590773827592" duration="1158000" />
       <workItem from="1590823996279" duration="4453000" />
       <workItem from="1590828703454" duration="52000" />
+      <workItem from="1590830395982" duration="210000" />
+      <workItem from="1590830650175" duration="6069000" />
     </task>
     <servers />
   </component>
@@ -76,13 +104,37 @@
       <screen x="0" y="23" width="1920" height="1113" />
     </state>
     <state x="127" y="241" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.75.1920.1057/0.23.1920.1113@0.23.1920.1113" timestamp="1590825502632" />
-    <state x="164" y="218" key="SettingsEditor" timestamp="1590824682949">
-      <screen x="0" y="23" width="1920" height="1113" />
+    <state x="408" y="193" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1590830575032">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state x="408" y="193" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1440.900/1440.-505.1080.1920@0.0.1440.900" timestamp="1590830575032" />
+    <state width="568" height="728" key="GridCell.Tab.0.bottom" timestamp="1590835835532">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="568" height="728" key="GridCell.Tab.0.bottom/0.23.1440.877/1440.-482.1080.1897@0.23.1440.877" timestamp="1590835835532" />
+    <state width="568" height="728" key="GridCell.Tab.0.center" timestamp="1590835835531">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="568" height="728" key="GridCell.Tab.0.center/0.23.1440.877/1440.-482.1080.1897@0.23.1440.877" timestamp="1590835835531" />
+    <state width="568" height="728" key="GridCell.Tab.0.left" timestamp="1590835835531">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="568" height="728" key="GridCell.Tab.0.left/0.23.1440.877/1440.-482.1080.1897@0.23.1440.877" timestamp="1590835835531" />
+    <state width="568" height="728" key="GridCell.Tab.0.right" timestamp="1590835835532">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="568" height="728" key="GridCell.Tab.0.right/0.23.1440.877/1440.-482.1080.1897@0.23.1440.877" timestamp="1590835835532" />
+    <state x="123" y="177" key="SettingsEditor" timestamp="1590830934251">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="123" y="177" key="SettingsEditor/0.23.1440.877/1440.-482.1080.1897@0.23.1440.877" timestamp="1590830934251" />
     <state x="164" y="218" key="SettingsEditor/1920.75.1920.1057/0.23.1920.1113@0.23.1920.1113" timestamp="1590824682949" />
     <state x="444" y="498" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590827197090">
       <screen x="0" y="23" width="1920" height="1113" />
     </state>
     <state x="444" y="498" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.75.1920.1057/0.23.1920.1113@0.23.1920.1113" timestamp="1590827197090" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/api$main.coverage" NAME="main Coverage Results" MODIFIED="1590835835523" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/music_processor" />
   </component>
 </project>
