@@ -26,6 +26,7 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import Metrics from './Theme/Global/Metrics';
 
 declare const global: {HermesInternal: null | {}};
 
@@ -50,15 +51,15 @@ const App = () => {
 };
 
 const MainView = styled.View`
-  width: 100%;
-  height: 100%;
+  width: ${Metrics.screenWidth}px;
+  height: ${Metrics.screenHeight}px;;
   align-items: center;
   justify-content: center;
 `;
 
 const ImageTouchable = styled.TouchableOpacity`
-  width: 200px;
-  height: 200px;
+  width: ${Metrics.images.xxl}px;
+  height: ${Metrics.images.xxl}px;
 `;
 
 const CustomImage = styled.Image`
