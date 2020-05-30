@@ -7,18 +7,13 @@ from skimage.filters import gaussian
 
 matplotlib.rcParams['font.size'] = 18
 
-image = io.imread('../../assets/color.png')
+image = io.imread('../api/assets/color.png')
 
 
 def process_image_grey():
     # for name in images:
     # caller = getattr(data, "hubble_deep_field")
     # image = caller()
-    print("-----")
-    print(image)
-    print("-----")
-
-    print(len(image))
     print(len(image[0]))
     # cropped_image = image[0:100, 0:100]
     # image = gaussian(image, 10)
@@ -35,26 +30,23 @@ def process_image_grey():
     return rgb2gray(image)
 
 
-def process_image():
+def process_image(img=None):
     # for name in images:
     # caller = getattr(data, "hubble_deep_field")
     # image = caller()
     print("-----")
-    print(image)
+    print(img)
     print("-----")
 
-    print(len(image))
-    print(len(image[0]))
-    # cropped_image = image[0:100, 0:100]
     # image = gaussian(image, 10)
 
     plt.figure()
     plt.title("cell")
     if image.ndim == 2:
-        plt.imshow(image, cmap=plt.cm.gray)
+        plt.imshow(img, cmap=plt.cm.gray)
     else:
-        plt.imshow(image)
+        plt.imshow(img)
 
     plt.show()
 
-    return rgb2gray(image)
+    return rgb2gray(img)

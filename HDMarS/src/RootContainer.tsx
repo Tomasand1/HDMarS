@@ -12,7 +12,9 @@ import { post } from './Functions/router';
 const RootContainer = () => {
     const postImage = async (image: any) => {
         topMessage('Pressed');
-        post(image);
+        post(
+            '/Users/atomas/Documents/Projects/ESA/HDMarS/assets/images/23_Arabia_Dunes.jpg',
+        );
     };
 
     return (

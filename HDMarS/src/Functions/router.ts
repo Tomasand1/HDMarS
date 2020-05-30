@@ -1,29 +1,18 @@
-import axios from 'axios';
-
+import RNFetchBlob from 'rn-fetch-blob';
 const post = async (image: any) => {
-    var data = new FormData();
-    data.append('image', {
-        uri: '../assets/images/23_Arabia_Dunes.jpg',
-        name: 'userProfile.jpg',
-        type: 'image/jpg',
-    });
-    axios
-        .post(
-            'https://a115cfabd0df.ngrok.io/api/process-photo',
-            {
-                image,
-            },
-            {
-                headers: {
-                    'content-type': 'image/jpg', // do not forget this
-                },
-            },
-        )
-        .then(function (response) {
-            console.log(response);
+    RNFetchBlob.fetch(
+        'POST',
+        'http://127.0.0.1:5000/api/process-photo',
+        {
+            'Content-Type': 'application/octet-stream',
+        },
+        RNFetchBlob.wrap(image),
+    )
+        .then((res) => {
+            console.log(res.text());
         })
-        .catch(function (error) {
-            console.log(error);
+        .catch((err) => {
+            console.log(err);
         });
 };
 
