@@ -6,7 +6,7 @@ import Metrics from './Theme/Global/Metrics';
 import Colors from './Theme/Global/Colors';
 import ImageTouchable from './Components/ImageTouchable';
 import { topMessage } from './Components/Global/TopMessage';
-import { post } from './Functions/router';
+import { post, processUrl } from './Functions/router';
 // import AppNavigation from '../Navigation/AppNavigation';
 import SoundPlayer from 'react-native-sound-player';
 

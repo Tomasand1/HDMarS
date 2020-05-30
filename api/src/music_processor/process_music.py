@@ -7,7 +7,7 @@ def process_music(file_array):
 
 	s = Server(audio="offline")
 	s.boot()
-	s.recordOptions(dur=len(arr), filename="../api/assets/processed_file.wav")
+	s.recordOptions(dur=len(arr), filename="../api/assets/processed_file.wav", fileformat=0)
 	wav = SquareTable()
 
 	first = 100

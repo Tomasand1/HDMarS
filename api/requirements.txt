@@ -1,3 +1,5 @@
+PIL
+pydub
 cv2
 matplotlib
 scikit-image
