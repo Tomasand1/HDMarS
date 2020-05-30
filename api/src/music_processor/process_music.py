@@ -2,12 +2,12 @@ from pyo import *
 
 
 def process_music(file_array):
-	arr = file_array
+	arr = file_array[:100]
 	freq_arr = []
 
 	s = Server(audio="offline")
 	s.boot()
-	s.recordOptions(dur=10, filename="../assets/processed_file.wav")
+	s.recordOptions(dur=len(arr), filename="../api/assets/processed_file.wav")
 	wav = SquareTable()
 
 	first = 100
@@ -39,10 +39,10 @@ def process_music(file_array):
 	for a in range(0, len(arr)):
 		freq_arr.append(a)
 
-	index = 1
+	index = 0
 	for a in arr:
 		print(a)
-		freq_arr[index] = CallAfter(callback, index, (a, a + 1))
+		freq_arr[index] = CallAfter(callback, index, (a*10, a*10 + 1))
 		index += 1
 
 	s.start()

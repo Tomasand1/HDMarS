@@ -9,9 +9,7 @@ from src.image_processor.process_image import process_image
 @app.route('/api/process-photo', methods=["POST"])
 def process():
     average_time = request.data
-    print(type(average_time))
-    image = Image.open(io.BytesIO(average_time))
-    image.show()
+    image = Image.open(io.BytesIO(average_time)).convert('RGB')
     process_image(image)
     return "average_time"
 

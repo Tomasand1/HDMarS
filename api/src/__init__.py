@@ -3,3 +3,6 @@ from flask import Flask
 app = Flask(__name__)
 
 import src.router.get
+
+app.run()
+
