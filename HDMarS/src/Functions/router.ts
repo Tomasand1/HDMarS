@@ -1,7 +1,7 @@
 import RNFetchBlob from 'rn-fetch-blob';
 import axios from 'axios';
 const post = async (image: any) => {
-    RNFetchBlob.fetch(
+    return await RNFetchBlob.fetch(
         'POST',
         'http://a115cfabd0df.ngrok.io/api/process-photo',
         {

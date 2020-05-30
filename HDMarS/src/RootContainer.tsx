@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components/native';
 import { StatusBar, Platform, SafeAreaView } from 'react-native';
 import FlashMessage from 'react-native-flash-message';
@@ -8,14 +8,52 @@ import ImageTouchable from './Components/ImageTouchable';
 import { topMessage } from './Components/Global/TopMessage';
 import { post, processUrl } from './Functions/router';
 // import AppNavigation from '../Navigation/AppNavigation';
+import SoundPlayer from 'react-native-sound-player';
 
 const RootContainer = () => {
-    const postImage = async (image: any) => {
+    const [images, setImages] = useState([] as any[]);
+    const [isPressed, setIsPressed] = useState(false);
+
+    useEffect(() => {
+        setImages([
+            'https://mars.nasa.gov/system/resources/detail_files/5301_7_methane1_Mars_Methane_Mystery-full2.jpg',
+            'https://mars.nasa.gov/system/resources/detail_files/5258_9_Canyon_Junction-full2.jpg',
+            'https://mars.nasa.gov/system/resources/detail_files/5250_4_Small_Floral_Shaped_Volcano-full2.jpg',
+        ]);
+    }, []);
+
+    const handlePlay = (imageURL: string): void => {
+        if (isPressed) {
+            stopFile();
+        } else {
+            postImage(imageURL);
+        }
+        setIsPressed(!isPressed);
+    };
+
+    const stopFile = () => {
+        try {
+            SoundPlayer.stop();
+        } catch (err) {
+            console.log(`cannot pause the sound file`, err);
+            topMessage(`${err}`);
+        }
+    };
+
+    const postImage = async (imageURL: any) => {
         topMessage('Pressed');
-        await processUrl('example.url');
-        // await post(
-        //     '/Users/atomas/Documents/Projects/ESA/HDMarS/assets/images/23_Arabia_Dunes.jpg',
-        // );
+        await post(imageURL);
+        playFile();
+    };
+
+    const playFile = () => {
+        try {
+            SoundPlayer.playUrl('https://a115cfabd0df.ngrok.io/play');
+            topMessage('playing');
+        } catch (err) {
+            console.log(`cannot play the sound file`, err);
+            topMessage(`${err}`);
+        }
     };
 
     return (
@@ -27,10 +65,16 @@ const RootContainer = () => {
             />
             <SafeAreaView>
                 <MainView>
-                    <ImageTouchable
-                        onPress={postImage}
-                        source={require('../assets/images/23_Arabia_Dunes.jpg')}
-                    />
+                    {images.map((imageURL: string) => {
+                        return (
+                            <ImageTouchable
+                                onPress={() => handlePlay(imageURL)}
+                                source={{
+                                    uri: imageURL,
+                                }}
+                            />
+                        );
+                    })}
                 </MainView>
             </SafeAreaView>
             <FlashMessage position="top" />

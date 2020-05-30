@@ -161,7 +161,6 @@
 				107E6BDE55AAB148AE41DE5B /* Pods-HDMarS-tvOSTests.debug.xcconfig */,
 				DACB4D7855076639A3925F02 /* Pods-HDMarS-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
