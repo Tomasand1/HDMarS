@@ -6,15 +6,16 @@ import Metrics from './Theme/Global/Metrics';
 import Colors from './Theme/Global/Colors';
 import ImageTouchable from './Components/ImageTouchable';
 import { topMessage } from './Components/Global/TopMessage';
-import { post } from './Functions/router';
+import { post, processUrl } from './Functions/router';
 // import AppNavigation from '../Navigation/AppNavigation';
 
 const RootContainer = () => {
     const postImage = async (image: any) => {
         topMessage('Pressed');
-        post(
-            '/Users/atomas/Documents/Projects/ESA/HDMarS/assets/images/23_Arabia_Dunes.jpg',
-        );
+        await processUrl('example.url');
+        // await post(
+        //     '/Users/atomas/Documents/Projects/ESA/HDMarS/assets/images/23_Arabia_Dunes.jpg',
+        // );
     };
 
     return (
