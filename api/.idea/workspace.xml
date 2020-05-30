@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc3b01de-4545-4d25-a6c4-13d8da748d0d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/router/get.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/api.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +44,13 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/router" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -51,11 +63,26 @@
       <option name="presentableId" value="Default" />
       <updated>1590773823192</updated>
       <workItem from="1590773827592" duration="1158000" />
-      <workItem from="1590823996279" duration="106000" />
+      <workItem from="1590823996279" duration="4453000" />
+      <workItem from="1590828703454" duration="52000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="127" y="241" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590825502632">
+      <screen x="0" y="23" width="1920" height="1113" />
+    </state>
+    <state x="127" y="241" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.75.1920.1057/0.23.1920.1113@0.23.1920.1113" timestamp="1590825502632" />
+    <state x="164" y="218" key="SettingsEditor" timestamp="1590824682949">
+      <screen x="0" y="23" width="1920" height="1113" />
+    </state>
+    <state x="164" y="218" key="SettingsEditor/1920.75.1920.1057/0.23.1920.1113@0.23.1920.1113" timestamp="1590824682949" />
+    <state x="444" y="498" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590827197090">
+      <screen x="0" y="23" width="1920" height="1113" />
+    </state>
+    <state x="444" y="498" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.75.1920.1057/0.23.1920.1113@0.23.1920.1113" timestamp="1590827197090" />
   </component>
 </project>
