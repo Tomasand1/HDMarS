@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dc3b01de-4545-4d25-a6c4-13d8da748d0d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/music_processor/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/api.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="dc3b01de-4545-4d25-a6c4-13d8da748d0d" name="Default Changelist" comment="add pyo and init workspace">
+      <change beforePath="$PROJECT_DIR$/../HDMarS/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../HDMarS/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HDMarS/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../HDMarS/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/music_processor/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/music_processor/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +40,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -92,12 +91,25 @@
       <workItem from="1590823996279" duration="4453000" />
       <workItem from="1590828703454" duration="52000" />
       <workItem from="1590830395982" duration="210000" />
-      <workItem from="1590830650175" duration="6069000" />
+      <workItem from="1590830650175" duration="11678000" />
+      <workItem from="1590846050233" duration="7052000" />
     </task>
+    <task id="LOCAL-00001" summary="add pyo and init workspace">
+      <created>1590837009421</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1590837009421</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add pyo and init workspace" />
+    <option name="LAST_COMMIT_MESSAGE" value="add pyo and init workspace" />
   </component>
   <component name="WindowStateProjectService">
     <state x="127" y="241" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590825502632">
@@ -108,33 +120,67 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="408" y="193" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1440.900/1440.-505.1080.1920@0.0.1440.900" timestamp="1590830575032" />
-    <state width="568" height="728" key="GridCell.Tab.0.bottom" timestamp="1590835835532">
+    <state x="300" y="23" key="CommitChangelistDialog2" timestamp="1590847192467">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="568" height="728" key="GridCell.Tab.0.bottom/0.23.1440.877/1440.-482.1080.1897@0.23.1440.877" timestamp="1590835835532" />
-    <state width="568" height="728" key="GridCell.Tab.0.center" timestamp="1590835835531">
+    <state x="300" y="23" key="CommitChangelistDialog2/0.23.1440.877/1440.-482.1080.1897@0.23.1440.877" timestamp="1590846102204" />
+    <state x="300" y="23" key="CommitChangelistDialog2/0.23.1440.877@0.23.1440.877" timestamp="1590847192467" />
+    <state width="698" height="728" key="GridCell.Tab.0.bottom" timestamp="1590853582055">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="568" height="728" key="GridCell.Tab.0.center/0.23.1440.877/1440.-482.1080.1897@0.23.1440.877" timestamp="1590835835531" />
-    <state width="568" height="728" key="GridCell.Tab.0.left" timestamp="1590835835531">
+    <state width="698" height="728" key="GridCell.Tab.0.bottom/0.23.1440.877/1440.-482.1080.1897@0.23.1440.877" timestamp="1590853582055" />
+    <state width="461" height="728" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1590847163198" />
+    <state width="698" height="728" key="GridCell.Tab.0.center" timestamp="1590853582054">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="568" height="728" key="GridCell.Tab.0.left/0.23.1440.877/1440.-482.1080.1897@0.23.1440.877" timestamp="1590835835531" />
-    <state width="568" height="728" key="GridCell.Tab.0.right" timestamp="1590835835532">
+    <state width="698" height="728" key="GridCell.Tab.0.center/0.23.1440.877/1440.-482.1080.1897@0.23.1440.877" timestamp="1590853582054" />
+    <state width="461" height="728" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1590847163198" />
+    <state width="698" height="728" key="GridCell.Tab.0.left" timestamp="1590853582053">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="568" height="728" key="GridCell.Tab.0.right/0.23.1440.877/1440.-482.1080.1897@0.23.1440.877" timestamp="1590835835532" />
-    <state x="123" y="177" key="SettingsEditor" timestamp="1590830934251">
+    <state width="698" height="728" key="GridCell.Tab.0.left/0.23.1440.877/1440.-482.1080.1897@0.23.1440.877" timestamp="1590853582053" />
+    <state width="461" height="728" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1590847163197" />
+    <state width="698" height="728" key="GridCell.Tab.0.right" timestamp="1590853582054">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="123" y="177" key="SettingsEditor/0.23.1440.877/1440.-482.1080.1897@0.23.1440.877" timestamp="1590830934251" />
+    <state width="698" height="728" key="GridCell.Tab.0.right/0.23.1440.877/1440.-482.1080.1897@0.23.1440.877" timestamp="1590853582054" />
+    <state width="461" height="728" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1590847163198" />
+    <state width="1398" height="266" key="GridCell.Tab.1.bottom" timestamp="1590850159907">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1398" height="266" key="GridCell.Tab.1.bottom/0.23.1440.877/1440.-482.1080.1897@0.23.1440.877" timestamp="1590850159907" />
+    <state width="1398" height="266" key="GridCell.Tab.1.center" timestamp="1590850159906">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1398" height="266" key="GridCell.Tab.1.center/0.23.1440.877/1440.-482.1080.1897@0.23.1440.877" timestamp="1590850159906" />
+    <state width="1398" height="266" key="GridCell.Tab.1.left" timestamp="1590850159905">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1398" height="266" key="GridCell.Tab.1.left/0.23.1440.877/1440.-482.1080.1897@0.23.1440.877" timestamp="1590850159905" />
+    <state width="1398" height="266" key="GridCell.Tab.1.right" timestamp="1590850159906">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1398" height="266" key="GridCell.Tab.1.right/0.23.1440.877/1440.-482.1080.1897@0.23.1440.877" timestamp="1590850159906" />
+    <state x="498" y="94" key="RollbackChangesDialog" timestamp="1590847320932">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="498" y="94" key="RollbackChangesDialog/0.23.1440.877/1440.-482.1080.1897@0.23.1440.877" timestamp="1590847320932" />
+    <state x="123" y="177" key="SettingsEditor" timestamp="1590837363951">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="123" y="177" key="SettingsEditor/0.23.1440.877/1440.-482.1080.1897@0.23.1440.877" timestamp="1590837363951" />
     <state x="164" y="218" key="SettingsEditor/1920.75.1920.1057/0.23.1920.1113@0.23.1920.1113" timestamp="1590824682949" />
-    <state x="444" y="498" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590827197090">
-      <screen x="0" y="23" width="1920" height="1113" />
+    <state x="333" y="397" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590837088398">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
+    <state x="333" y="397" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.877/1440.-482.1080.1897@0.23.1440.877" timestamp="1590837088398" />
     <state x="444" y="498" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.75.1920.1057/0.23.1920.1113@0.23.1920.1113" timestamp="1590827197090" />
+    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup" timestamp="1590837309094">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="385" y="213" width="670" height="676" key="search.everywhere.popup/0.23.1440.877/1440.-482.1080.1897@0.23.1440.877" timestamp="1590837309094" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/api$main.coverage" NAME="main Coverage Results" MODIFIED="1590835835523" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/music_processor" />
+    <SUITE FILE_PATH="coverage/api$main.coverage" NAME="main Coverage Results" MODIFIED="1590853582047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/music_processor" />
   </component>
 </project>

@@ -1,19 +1,17 @@
 from pyo import *
 
 if __name__ == '__main__':
-	s = Server()
+	s = Server(audio="offline")
 	s.boot()
-	s.start()
-	s.setInputDevice(4)
-	s.setOutputDevice(4)
+	s.recordOptions(dur=30, filename="testukas.wav")
 	wav = SquareTable()
 
 	first = 100
 	second = 500
-	bbb = 1
+	bbb = 0.125
 	min, max = 47, 47
 
-	beat = Metro(time=bbb, poly=7).play()
+	beat = Metro(time=bbb, poly=1).play()
 
 	envelope = CosTable([(0, 0), (first, 1), (second, .3), (8191, 0)])
 
@@ -25,40 +23,24 @@ if __name__ == '__main__':
 
 	sig = SawTable(order=12).normalize()
 
-	lfo = LFO(freq=2.2, sharp=0.2, type=1, mul=110, add=220)
+	lfo = LFO(freq=1.2, sharp=0.2, type=1, mul=110, add=220)
 
-	envelope_synth = TrigEnv(beat, table=sig, dur=0.5)
+	envelope_synth = TrigEnv(beat, table=sig, dur=2)
 
-	synth = FM(carrier=[220.5, 220], ratio=[.2490,.250], index=envelope_synth, mul=0.2).out()
-	while True:
-		beat.set('time', bbb)
-		pitch.range(min, max)
+	synth = FM(carrier=lfo, ratio=[.2490, .250], index=envelope_synth, mul=0.2).out()
 
-		inp = input().lower()
-		if inp == 'stop':
-			break
+	def callback(arg):
+		lfo.setFreq(list(arg))
 
-		if inp == 's':
-			second += 500
-			print(second)
+	arr = [1, 20, 5, 10, 1]
 
-		if inp == 'p':
-			min, max = min + random.randint(-10, 10), max + random.randint(-10, 10)
-			print(min, max)
+	freq_arr = []
+	for a in range(0, len(arr)):
+		freq_arr.append(a)
 
-		if inp == 'f':
-			first += 100
-			print(first)
+	index = 0
+	for a in arr:
+		freq_arr[index] = CallAfter(callback, index, (a, a + 1))
+		index += 1
 
-		if inp == 'b':
-			bbb -= 0.25
-			print(bbb)
-
-		if inp == 'c':
-			bbb += 0.25
-			print(bbb)
-		pass
-
-# oscillator = Osc(table=wav, freq=pitch, mul=amplitude).out()
-# oscillator.stop()
-# s.gui(locals(), exit=False)
+	s.start()

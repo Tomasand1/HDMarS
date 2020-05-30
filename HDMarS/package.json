@@ -19,7 +19,8 @@
     "react": "16.11.0",
     "react-native": "0.62.2",
     "react-native-flash-message": "^0.1.15",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.1.1",
+    "tone": "^13.8.25"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
