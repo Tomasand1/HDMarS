@@ -23,6 +23,7 @@ const RootContainer = () => {
     }, []);
 
     const handlePlay = (imageURL: string): void => {
+        changeBG();
         if (isPressed) {
             stopFile();
         } else {
@@ -35,7 +36,7 @@ const RootContainer = () => {
         try {
             SoundPlayer.stop();
         } catch (err) {
-            console.log(`cannot pause the sound file`, err);
+            console.log('cannot pause the sound file', err);
             topMessage(`${err}`);
         }
     };
@@ -44,6 +45,7 @@ const RootContainer = () => {
         topMessage('Pressed');
         await post(imageURL);
         playFile();
+        getInfo();
     };
 
     const playFile = () => {
@@ -51,9 +53,26 @@ const RootContainer = () => {
             SoundPlayer.playUrl('https://a115cfabd0df.ngrok.io/play');
             topMessage('playing');
         } catch (err) {
-            console.log(`cannot play the sound file`, err);
+            console.log('cannot play the sound file', err);
             topMessage(`${err}`);
         }
+    };
+
+    const getInfo = async () => {
+        try {
+            const info = await SoundPlayer.getInfo();
+            console.log('getInfo', info);
+        } catch (e) {
+            console.log('There is no song playing', e);
+        }
+    };
+
+    const changeBG = () => {
+        let bg = 'red';
+        if (isPressed) {
+            bg = 'cyan';
+        }
+        return bg;
     };
 
     return (
@@ -64,7 +83,7 @@ const RootContainer = () => {
                 }
             />
             <SafeAreaView>
-                <MainView>
+                <MainView style={{ backgroundColor: changeBG() }}>
                     {images.map((imageURL: string) => {
                         return (
                             <ImageTouchable
