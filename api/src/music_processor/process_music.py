@@ -39,7 +39,7 @@ def process_music(file_array):
 	for a in range(0, len(arr)):
 		freq_arr.append(a)
 
-	index = 0
+	index = 1
 	for a in arr:
 		print(a)
 		freq_arr[index] = CallAfter(callback, index, (a, a + 1))
