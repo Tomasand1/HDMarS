@@ -1,3 +1,5 @@
+import urllib.request
+
 import matplotlib.pyplot as plt
 import matplotlib
 from pandas import np
@@ -37,4 +39,12 @@ def process_image(img=None):
     img = rgb2gray(img)
     print(len(img[0, :]))
     process_music(img[0, :])
-    return rgb2gray(img)
+
+
+def process_image_download(url):
+    print(url)
+    result = urllib.request.urlretrieve(url, 'assets/new_image.jpg')
+
+    img = io.imread("../api/assets/new_image.jpg")
+
+    process_music(rgb2gray(img))

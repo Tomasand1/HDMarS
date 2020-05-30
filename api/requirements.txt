@@ -1,3 +1,4 @@
+requests
 PIL
 pydub
 cv2

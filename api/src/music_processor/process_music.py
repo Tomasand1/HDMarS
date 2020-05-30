@@ -2,7 +2,8 @@ from pyo import *
 
 
 def process_music(file_array):
-	arr = file_array[:100]
+	arr = file_array[0, :][:100]
+	print(arr)
 	freq_arr = []
 
 	s = Server(audio="offline")
@@ -41,7 +42,7 @@ def process_music(file_array):
 
 	index = 0
 	for a in arr:
-		print(a)
+		# print(a)
 		freq_arr[index] = CallAfter(callback, index, (a*10, a*10 + 1))
 		index += 1
 

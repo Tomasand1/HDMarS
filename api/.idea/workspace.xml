@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc3b01de-4545-4d25-a6c4-13d8da748d0d" name="Default Changelist" comment="add pyo and init workspace">
+      <change beforePath="$PROJECT_DIR$/../HDMarS/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../HDMarS/ios/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HDMarS/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../HDMarS/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../HDMarS/src/Functions/router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../HDMarS/src/Functions/router.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HDMarS/src/Functions/test.wav" beforeDir="false" afterPath="$PROJECT_DIR$/../HDMarS/src/Functions/test.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../HDMarS/src/RootContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../HDMarS/src/RootContainer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/processed_file.wav" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/image_processor/process_image.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/image_processor/process_image.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/music_processor/process_music.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/music_processor/process_music.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/router/get.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/get.py" afterDir="false" />
     </list>
@@ -120,7 +123,7 @@
       <workItem from="1590830395982" duration="210000" />
       <workItem from="1590830650175" duration="11678000" />
       <workItem from="1590846050233" duration="7052000" />
-      <workItem from="1590853631005" duration="13542000" />
+      <workItem from="1590853631005" duration="16224000" />
     </task>
     <task id="LOCAL-00001" summary="add pyo and init workspace">
       <created>1590837009421</created>
@@ -161,30 +164,30 @@
     </state>
     <state x="300" y="23" key="CommitChangelistDialog2/0.23.1440.877/1440.-482.1080.1897@0.23.1440.877" timestamp="1590846102204" />
     <state x="300" y="23" key="CommitChangelistDialog2/0.23.1440.877@0.23.1440.877" timestamp="1590847192467" />
-    <state width="1283" height="313" key="GridCell.Tab.0.bottom" timestamp="1590860757930">
+    <state width="1283" height="313" key="GridCell.Tab.0.bottom" timestamp="1590878547956">
       <screen x="0" y="23" width="1920" height="1113" />
     </state>
     <state width="698" height="728" key="GridCell.Tab.0.bottom/0.23.1440.877/1440.-482.1080.1897@0.23.1440.877" timestamp="1590853582055" />
     <state width="461" height="728" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1590847163198" />
-    <state width="1283" height="313" key="GridCell.Tab.0.bottom/1920.75.1920.1057/0.23.1920.1113@0.23.1920.1113" timestamp="1590860757930" />
-    <state width="1283" height="313" key="GridCell.Tab.0.center" timestamp="1590860757929">
+    <state width="1283" height="313" key="GridCell.Tab.0.bottom/1920.75.1920.1057/0.23.1920.1113@0.23.1920.1113" timestamp="1590878547956" />
+    <state width="1283" height="313" key="GridCell.Tab.0.center" timestamp="1590878547955">
       <screen x="0" y="23" width="1920" height="1113" />
     </state>
     <state width="698" height="728" key="GridCell.Tab.0.center/0.23.1440.877/1440.-482.1080.1897@0.23.1440.877" timestamp="1590853582054" />
     <state width="461" height="728" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1590847163198" />
-    <state width="1283" height="313" key="GridCell.Tab.0.center/1920.75.1920.1057/0.23.1920.1113@0.23.1920.1113" timestamp="1590860757929" />
-    <state width="1283" height="313" key="GridCell.Tab.0.left" timestamp="1590860757929">
+    <state width="1283" height="313" key="GridCell.Tab.0.center/1920.75.1920.1057/0.23.1920.1113@0.23.1920.1113" timestamp="1590878547954" />
+    <state width="1283" height="313" key="GridCell.Tab.0.left" timestamp="1590878547954">
       <screen x="0" y="23" width="1920" height="1113" />
     </state>
     <state width="698" height="728" key="GridCell.Tab.0.left/0.23.1440.877/1440.-482.1080.1897@0.23.1440.877" timestamp="1590853582053" />
     <state width="461" height="728" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1590847163197" />
-    <state width="1283" height="313" key="GridCell.Tab.0.left/1920.75.1920.1057/0.23.1920.1113@0.23.1920.1113" timestamp="1590860757929" />
-    <state width="1283" height="313" key="GridCell.Tab.0.right" timestamp="1590860757930">
+    <state width="1283" height="313" key="GridCell.Tab.0.left/1920.75.1920.1057/0.23.1920.1113@0.23.1920.1113" timestamp="1590878547954" />
+    <state width="1283" height="313" key="GridCell.Tab.0.right" timestamp="1590878547955">
       <screen x="0" y="23" width="1920" height="1113" />
     </state>
     <state width="698" height="728" key="GridCell.Tab.0.right/0.23.1440.877/1440.-482.1080.1897@0.23.1440.877" timestamp="1590853582054" />
     <state width="461" height="728" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1590847163198" />
-    <state width="1283" height="313" key="GridCell.Tab.0.right/1920.75.1920.1057/0.23.1920.1113@0.23.1920.1113" timestamp="1590860757930" />
+    <state width="1283" height="313" key="GridCell.Tab.0.right/1920.75.1920.1057/0.23.1920.1113@0.23.1920.1113" timestamp="1590878547955" />
     <state width="1398" height="266" key="GridCell.Tab.1.bottom" timestamp="1590850159907">
       <screen x="0" y="23" width="1440" height="877" />
     </state>

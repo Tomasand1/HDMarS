@@ -3,7 +3,7 @@ import axios from 'axios';
 const post = async (image: any) => {
     return await RNFetchBlob.fetch(
         'POST',
-        'http://a115cfabd0df.ngrok.io/api/process-photo',
+        'https://ac932859160d.ngrok.io/api/process-photo',
         {
             'Content-Type': 'application/octet-stream',
         },
@@ -27,9 +27,13 @@ const post = async (image: any) => {
 
 const processUrl = async (url: string) => {
     const response = await axios.post(
-        'http://a115cfabd0df.ngrok.io/process-url',
+        'https://ac932859160d.ngrok.io/process-url',
+        {},
         {
-            url,
+            headers: {
+                'content-type': 'application/json',
+                url,
+            },
         },
     );
     console.log(response);

@@ -42,13 +42,14 @@ const RootContainer = () => {
 
     const postImage = async (imageURL: any) => {
         topMessage('Pressed');
-        await post(imageURL);
+        // await post(imageURL);
+        await processUrl(imageURL);
         playFile();
     };
 
     const playFile = () => {
         try {
-            SoundPlayer.playUrl('https://a115cfabd0df.ngrok.io/play');
+            SoundPlayer.playUrl('https://ac932859160d.ngrok.io/play');
             topMessage('playing');
         } catch (err) {
             console.log(`cannot play the sound file`, err);
