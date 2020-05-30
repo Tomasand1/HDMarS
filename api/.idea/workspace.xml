@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc3b01de-4545-4d25-a6c4-13d8da748d0d" name="Default Changelist" comment="add pyo and init workspace">
-      <change beforePath="$PROJECT_DIR$/../HDMarS/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../HDMarS/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HDMarS/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../HDMarS/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HDMarS/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../HDMarS/ios/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HDMarS/src/RootContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../HDMarS/src/RootContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/api.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/music_processor/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/music_processor/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/get.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/get.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +42,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -93,6 +95,7 @@
       <workItem from="1590830395982" duration="210000" />
       <workItem from="1590830650175" duration="11678000" />
       <workItem from="1590846050233" duration="7052000" />
+      <workItem from="1590853631005" duration="1141000" />
     </task>
     <task id="LOCAL-00001" summary="add pyo and init workspace">
       <created>1590837009421</created>
@@ -165,11 +168,11 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="498" y="94" key="RollbackChangesDialog/0.23.1440.877/1440.-482.1080.1897@0.23.1440.877" timestamp="1590847320932" />
-    <state x="123" y="177" key="SettingsEditor" timestamp="1590837363951">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state x="164" y="218" key="SettingsEditor" timestamp="1590853642856">
+      <screen x="0" y="23" width="1920" height="1113" />
     </state>
     <state x="123" y="177" key="SettingsEditor/0.23.1440.877/1440.-482.1080.1897@0.23.1440.877" timestamp="1590837363951" />
-    <state x="164" y="218" key="SettingsEditor/1920.75.1920.1057/0.23.1920.1113@0.23.1920.1113" timestamp="1590824682949" />
+    <state x="164" y="218" key="SettingsEditor/1920.75.1920.1057/0.23.1920.1113@0.23.1920.1113" timestamp="1590853642856" />
     <state x="333" y="397" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590837088398">
       <screen x="0" y="23" width="1440" height="877" />
     </state>

@@ -1,8 +1,8 @@
 from src import app
 
 
-@app.route('/api/music', methods=["GET"])
-def get_music():
+@app.route('/api/process-photo', methods=["POST"])
+def process():
     return "Music"
 
 
