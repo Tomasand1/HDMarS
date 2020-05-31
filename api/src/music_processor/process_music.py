@@ -1,7 +1,7 @@
 from pyo import *
 
 
-def meditation(freq_array):
+def meditation(freq_array, intensity):
 	freq_array = freq_array
 	freq_arr = []
 
@@ -34,15 +34,15 @@ def meditation(freq_array):
 	bbb = 0.25
 	min, max = 47, 47
 
-	beat = Metro(time=6, poly=1).play()
+	beat = Metro(time=intensity[0] + 0.5, poly=1).play()
 	# beat = Beat(time=.125, taps=8, w1=[90, 80], w2=50, w3=35, poly=1).play()
 	# envelope = CosTable([(0, 0), (first, 40), (second, .9), (8191, 0)])
 
 	envelope = CosTable([(0, 0), (first, 1), (second, .5), (8191, 0)])
 
-	amplitude = TrigEnv(beat, table=envelope, dur=5, mul=0.7)
+	amplitude = TrigEnv(beat, table=envelope, dur=intensity[0], mul=0.7)
 
-	pitch = TrigXnoiseMidi(beat, dist=3, scale=0, mrange=(15, 15))
+	pitch = TrigXnoiseMidi(beat, dist=3, scale=0, mrange=(20, 20))
 
 	sine = Osc(table=wav, freq=pitch, mul=amplitude).out()
 
@@ -51,7 +51,7 @@ def meditation(freq_array):
 	# lfo = LFO(freq=1.2, sharp=0.2, type=4, mul=210, add=100)
 	lfo = LFO(freq=1.2, sharp=0.2, type=4, mul=200, add=100)
 
-	envelope_synth = TrigEnv(beat, table=sig, dur=2)
+	envelope_synth = TrigEnv(beat, table=sig, dur=5)
 
 	synth = FM(carrier=lfo, ratio=[.2490, .250], index=envelope_synth, mul=0.2).out()
 
@@ -75,17 +75,16 @@ def meditation(freq_array):
 	index = 0
 	for a in freq_array:
 		# print(a)
-		freq_arr[index] = CallAfter(callback, index, (a, a + 1))
+		freq_arr[index] = CallAfter(callback, index, (a * intensity[1], a * intensity[1] + 1))
 		index += 1
 
 	s.start()
 
 
-def study(freq_array):
+def study(freq_array, intensity):
 	freq_array = freq_array
 	print(freq_array)
 	freq_arr = []
-
 
 	s = Server(audio="offline", sr=44100, nchnls=2, buffersize=512, duplex=1)
 	s.boot()
@@ -96,11 +95,11 @@ def study(freq_array):
 	first = 100
 	second = 500
 
-	beat = Metro(time=6, poly=1).play()
+	beat = Metro(time=intensity[0] + 1, poly=1).play()
 
 	envelope = CosTable([(0, 0), (first, 1), (second, .5), (8191, 0)])
 
-	amplitude = TrigEnv(beat, table=envelope, dur=5, mul=0.7)
+	amplitude = TrigEnv(beat, table=envelope, dur=intensity[0], mul=0.7)
 
 	pitch = TrigXnoiseMidi(beat, dist=3, scale=0, mrange=(20, 20))
 
@@ -126,3 +125,81 @@ def study(freq_array):
 		index += 1
 
 	s.start()
+
+
+def funky(freq_array, intensity):
+	freq_array = freq_array
+	freq_arr = []
+
+
+	s = Server(audio="offline", sr=44100, nchnls=2, buffersize=512, duplex=1)
+	s.boot()
+	s.recordOptions(dur=len(freq_array), filename="../api/assets/processed_file.wav", fileformat=0)
+	wav = SquareTable()
+	pi = [(i) * 100 for i in freq_array]
+	pits = midiToHz(pi)
+	durs = freq_array
+
+	offset = 0
+	objs = []
+	for i in range(len(freq_array)):
+		pit = pits[i]
+		dur = 0.1 + float(durs[i])
+		start = offset
+		offset = start + dur
+		amp = Fader(fadein=0.005, fadeout= .105, dur=dur, mul=.3).play(delay=start, dur=dur + .1)
+		osc = SineLoop(freq=pit, feedback=.07, mul=amp).out(delay=start, dur=dur + .1)
+		objs.append(amp)
+		objs.append(osc)
+
+	first = 100
+	second = 500
+	bbb = 0.25
+	min, max = 47, 47
+
+	beat = Metro(time=intensity[0] + 0.5, poly=1).play()
+	# beat = Beat(time=.125, taps=8, w1=[90, 80], w2=50, w3=35, poly=1).play()
+	# envelope = CosTable([(0, 0), (first, 40), (second, .9), (8191, 0)])
+
+	envelope = CosTable([(0, 0), (first, 1), (second, .5), (8191, 0)])
+
+	amplitude = TrigEnv(beat, table=envelope, dur=intensity[0], mul=0.7)
+
+	pitch = TrigXnoiseMidi(beat, dist=3, scale=0, mrange=(20, 20))
+
+	sine = Osc(table=wav, freq=pitch, mul=amplitude).out()
+
+	sig = SawTable(order=12).normalize()
+
+	# lfo = LFO(freq=1.2, sharp=0.2, type=4, mul=210, add=100)
+	lfo = LFO(freq=1.2, sharp=0.2, type=4, mul=200, add=100)
+
+	envelope_synth = TrigEnv(beat, table=sig, dur=5)
+
+	# synth = FM(carrier=lfo, ratio=[.2490, .250], index=envelope_synth, mul=0.2).out()
+
+	ldf = Sine([.4,.2], mul=.2, add=.5)
+	synth_80 = SuperSaw(freq=60, detune=ldf, bal=0.5, mul=0.2)
+	# f = Phasor(freq=[1, 1.5], mul=700, add=300)
+	# sine = Sine(freq=f, mul=.2).out()
+	# a = Rossler(pitch=.003, stereo=True, mul=.2, add=.2)
+	# b = Rossler(pitch=[.5, .48], mul=a).out()
+	# d = ChenLee(pitch=.01, chaos=0.1, stereo=True, mul=.5, add=.5)
+	# g = ChenLee(pitch=1, chaos=d, mul=0.5).out()
+	# a = Rossler(pitch=.003, stereo=True, mul=.2, add=.2)
+	# b = Rossler(pitch=[.5, .48], mul=a).out()
+
+	def callback(arg):
+		lfo.setFreq(list(arg))
+
+	for a in range(0, len(freq_array)):
+		freq_arr.append(a)
+
+	index = 0
+	for a in freq_array:
+		# print(a)
+		freq_arr[index] = CallAfter(callback, index, (a * intensity[1], a * intensity[1] + 1))
+		index += 1
+
+	s.start()
+
