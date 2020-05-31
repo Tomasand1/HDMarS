@@ -1,3 +1,4 @@
+import statistics
 import urllib.request
 
 import matplotlib.pyplot as plt
@@ -42,9 +43,17 @@ def process_image(img=None):
 
 
 def process_image_download(url):
-    print(url)
-    result = urllib.request.urlretrieve(url, 'assets/new_image.jpg')
+    urllib.request.urlretrieve(url, 'assets/new_image.jpg')
 
     img = io.imread("../api/assets/new_image.jpg")
+    img = rgb2gray(img)
+    print(img)
+    average_arr = []
+    print(len((img[0, :])))
+    for i in range(len((img[0, :]))):
+        mean = statistics.mean((img)[:, i])
+        average_arr.append(mean*10)
 
-    process_music(rgb2gray(img))
+    print(average_arr)
+
+    process_music(average_arr)

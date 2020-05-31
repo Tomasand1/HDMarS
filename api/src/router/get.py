@@ -42,4 +42,4 @@ def index():
     return send_file("/Users/atomas/Documents/Projects/ESA/api/assets/processed_file.mp3",
                      mimetype="audio/mp3",
                      as_attachment=False,
-                     attachment_filename="test.flac")
+                     attachment_filename="test.mp3")

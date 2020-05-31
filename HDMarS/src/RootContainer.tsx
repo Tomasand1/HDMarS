@@ -19,6 +19,7 @@ const RootContainer = () => {
             'https://mars.nasa.gov/system/resources/detail_files/5301_7_methane1_Mars_Methane_Mystery-full2.jpg',
             'https://mars.nasa.gov/system/resources/detail_files/5258_9_Canyon_Junction-full2.jpg',
             'https://mars.nasa.gov/system/resources/detail_files/5250_4_Small_Floral_Shaped_Volcano-full2.jpg',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTGhqTYNWPhdYqB_OpSVnMTCLsl2JOBBNuaYJeYIKrgIbxkMpZm&usqp=CAU',
         ]);
     }, []);
 
@@ -47,7 +48,7 @@ const RootContainer = () => {
         // await post(imageURL);
         await processUrl(imageURL);
         playFile();
-        getInfo();
+        // getInfo();
     };
 
     const playFile = () => {
@@ -63,7 +64,7 @@ const RootContainer = () => {
     const getInfo = async () => {
         try {
             const info = await SoundPlayer.getInfo();
-            console.log('getInfo', info);
+            console.log('getInfo', JSON.stringify(info));
         } catch (e) {
             console.log('There is no song playing', e);
         }

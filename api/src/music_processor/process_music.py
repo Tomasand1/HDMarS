@@ -1,14 +1,14 @@
 from pyo import *
 
 
-def process_music(file_array):
-	arr = file_array[0, :][:100]
-	print(arr)
+def process_music(freq_array):
+	freq_array = freq_array
 	freq_arr = []
+
 
 	s = Server(audio="offline")
 	s.boot()
-	s.recordOptions(dur=len(arr), filename="../api/assets/processed_file.wav", fileformat=0)
+	s.recordOptions(dur=len(freq_array), filename="../api/assets/processed_file.wav", fileformat=0)
 	wav = SquareTable()
 
 	first = 100
@@ -16,7 +16,8 @@ def process_music(file_array):
 	bbb = 0.25
 	min, max = 47, 47
 
-	beat = Metro(time=bbb, poly=1).play()
+	# beat = Metro(time=10, poly=0.2).play()
+	beat = Beat(time=.9, taps=16, w1=[90, 80], w2=50, w3=35, poly=1)
 
 	envelope = CosTable([(0, 0), (first, 1), (second, .3), (8191, 0)])
 
@@ -37,13 +38,13 @@ def process_music(file_array):
 	def callback(arg):
 		lfo.setFreq(list(arg))
 
-	for a in range(0, len(arr)):
+	for a in range(0, len(freq_array)):
 		freq_arr.append(a)
 
 	index = 0
-	for a in arr:
+	for a in freq_array:
 		# print(a)
-		freq_arr[index] = CallAfter(callback, index, (a*10, a*10 + 1))
+		freq_arr[index] = CallAfter(callback, index, (a, a + 1))
 		index += 1
 
 	s.start()
