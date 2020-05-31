@@ -488,7 +488,7 @@ const Screen4 = (props) => {
                 </Button>
 
                 <ProgressDots
-                    colorIndex={3}
+                    colorIndex={4}
                     size={SCREEN_WIDTH * 0.01744}
                     initVal1={1}
                     initVal2={2}

@@ -58,7 +58,7 @@ const LoadingScreen = (props: any) => {
         <LoadingWrapper>
             <TitleView>
                 <LoadingText>
-                    Please wait while we generate your sound waves!
+                    Please wait while we generate your sound waves
                 </LoadingText>
             </TitleView>
             <LottieView
