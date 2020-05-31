@@ -63,10 +63,10 @@ const Main = (props: any) => {
 
     return (
         <SafeAreaView>
-            <TitleView>
-                <TitleText>Select Image</TitleText>
-            </TitleView>
             <MainView>
+                <TitleView>
+                    <TitleText>Select Image</TitleText>
+                </TitleView>
                 {images.map((imageObj) => {
                     return (
                         <ImageTouchable
