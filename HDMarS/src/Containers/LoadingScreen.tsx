@@ -20,32 +20,32 @@ const LoadingWrapper = styled.View`
     z-index: 999999;
 `;
 
-const LoadingIndicator = (props: any) => {
+const LoadingScreen = (props: any) => {
     const { route, navigation } = props;
     console.log(props);
     const [url, setUrl] = useState();
     const [loading, setLoading] = useState(true);
 
-    const processImage = async (imageUrl: any) => {
-        await processUrl(imageUrl);
+    const processImage = async (image: any) => {
+        await processUrl(image[0]);
 
         setLoading(false);
-        handleOnNext();
+        handleOnNext(image);
     };
     useEffect(() => {
         if (route.params) {
-            setUrl(route.params.url);
-            processImage(route.params.url);
+            setUrl(route.params.image);
+            processImage(route.params.image);
         } else {
             topMessage('Loading failed, please try again', 'error');
             navigation.goBack();
         }
     }, []);
 
-    const handleOnNext = () => {
+    const handleOnNext = (image: any) => {
         console.log('here');
         console.log('done');
-        navigation.navigate('MainPlayer');
+        navigation.navigate('MainPlayer', { image });
     };
 
     return (
@@ -81,4 +81,4 @@ const LoadingText = styled.Text`
     text-align: center;
 `;
 
-export default LoadingIndicator;
+export default LoadingScreen;

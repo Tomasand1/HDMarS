@@ -4,7 +4,7 @@ import { SafeAreaView } from 'react-native';
 import Metrics from '../Theme/Global/Metrics';
 import LoadingIndicator from '../Components/LoadingIndicator';
 
-const LoadingIndicator = () => {
+const Indicator = () => {
     return (
         <SafeAreaView>
             <MainView>
@@ -21,4 +21,4 @@ const MainView = styled.View`
     justify-content: center;
 `;
 
-export default LoadingIndicator;
+export default Indicator;

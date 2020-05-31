@@ -7,6 +7,9 @@ import ImageTouchable from '../Components/ImageTouchable';
 import { topMessage } from '../Components/Global/TopMessage';
 import { processUrl } from '../Functions/router';
 import SoundPlayer from 'react-native-sound-player';
+import { Title1, Title2 } from '../Components/Typography';
+import colors from '../Themes/Colors';
+import { Fonts } from '../Themes';
 
 const Main = (props: any) => {
     const [images, setImages] = useState([] as any[]);
@@ -53,17 +56,20 @@ const Main = (props: any) => {
         ]);
     }, []);
 
-    const handleOnNext = (url: any) => {
-        props.navigation.navigate('LoadingScreen', { url });
+    const handleOnNext = (image: any) => {
+        props.navigation.navigate('LoadingScreen', { image });
     };
 
     return (
         <SafeAreaView>
+            <TitleView>
+                <TitleText>Select Image</TitleText>
+            </TitleView>
             <MainView>
                 {images.map((imageObj) => {
                     return (
                         <ImageTouchable
-                            onPress={() => handleOnNext(imageObj[0])}
+                            onPress={() => handleOnNext(imageObj)}
                             title={imageObj[1]}
                             date={imageObj[2]}
                             onInfo={() => topMessage('this is info text')}
@@ -82,6 +88,20 @@ const MainView = styled.ScrollView`
     /* height: ${Metrics.screenHeight}px; */
     /* align-items: center; */
     /* justify-content: center; */
+`;
+
+const TitleView = styled.View`
+    align-items: center;
+    justify-content: center;
+`;
+
+const TitleText = styled.Text`
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    color: ${colors.tintColor};
+    font-family: ${Fonts.type.medium};
 `;
 
 export default Main;
