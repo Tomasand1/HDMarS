@@ -36,7 +36,7 @@ const LoadingScreen = (props: any) => {
         );
 
         setLoading(false);
-        handleOnNext(image);
+        handleOnNext(image, route.params.time);
     };
     useEffect(() => {
         if (route.params) {
@@ -48,10 +48,10 @@ const LoadingScreen = (props: any) => {
         }
     }, []);
 
-    const handleOnNext = (image: any) => {
+    const handleOnNext = (image: any, time: string) => {
         console.log('here');
         console.log('done');
-        navigation.navigate('MainPlayer', { image });
+        navigation.navigate('MainPlayer', { image, time });
     };
 
     return (
