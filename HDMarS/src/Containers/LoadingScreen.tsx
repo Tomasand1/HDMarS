@@ -26,25 +26,27 @@ const LoadingIndicator = (props: any) => {
     const [url, setUrl] = useState();
     const [loading, setLoading] = useState(true);
 
-    const processImage = async () => {
-        await processUrl(url);
+    const processImage = async (imageUrl: any) => {
+        await processUrl(imageUrl);
+
         setLoading(false);
+        handleOnNext();
     };
     useEffect(() => {
         if (route.params) {
             setUrl(route.params.url);
+            processImage(route.params.url);
         } else {
             topMessage('Loading failed, please try again', 'error');
             navigation.goBack();
         }
-        processImage();
     }, []);
 
-    useEffect(() => {
-        if (!loading) {
-            navigation.navigate('Main');
-        }
-    }, [loading]);
+    const handleOnNext = () => {
+        console.log('here');
+        console.log('done');
+        navigation.navigate('MainPlayer');
+    };
 
     return (
         <LoadingWrapper>

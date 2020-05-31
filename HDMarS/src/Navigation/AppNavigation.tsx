@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import LaunchScreen from '../LaunchScreen';
 import LoadingScreen from '../Containers/LoadingScreen';
 import Main from '../Containers/Main';
+import MainPlayer from '../Containers/MainPlayer';
 
 const AppStack = createStackNavigator();
 
@@ -27,6 +28,7 @@ const AppNavigation = (): JSX.Element => {
                     name="LoadingScreen"
                     component={LoadingScreen}
                 />
+                <AppStack.Screen name="MainPlayer" component={MainPlayer} />
             </AppStack.Navigator>
         </NavigationContainer>
     );

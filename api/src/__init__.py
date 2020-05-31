@@ -4,5 +4,6 @@ app = Flask(__name__)
 
 import src.router.get
 
-app.run()
+if __name__ == "__main__":
+    app.run()
 

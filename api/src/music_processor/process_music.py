@@ -82,7 +82,7 @@ def meditation(freq_array):
 
 
 def study(freq_array):
-	freq_array = freq_array * 10
+	freq_array = freq_array
 	print(freq_array)
 	freq_arr = []
 

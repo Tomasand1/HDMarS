@@ -53,13 +53,17 @@ const Main = (props: any) => {
         ]);
     }, []);
 
+    const handleOnNext = (url: any) => {
+        props.navigation.navigate('LoadingScreen', { url });
+    };
+
     return (
         <SafeAreaView>
             <MainView>
                 {images.map((imageObj) => {
                     return (
                         <ImageTouchable
-                            onPress={() => topMessage(`img: ${imageObj[0]}`)}
+                            onPress={() => handleOnNext(imageObj[0])}
                             title={imageObj[1]}
                             date={imageObj[2]}
                             onInfo={() => topMessage('this is info text')}

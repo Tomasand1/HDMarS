@@ -498,9 +498,7 @@ class GetStartedHandler extends Component {
                         index={3}
                     />
                     <Screen4
-                        onPress={() =>
-                            this.props.navigation.navigate('LoadingScreen')
-                        }
+                        onPress={() => this.props.navigation.navigate('Main')}
                         lottieSource={require('./Assets/Animations/notification-state-off.json')}
                         index={4}
                     />
