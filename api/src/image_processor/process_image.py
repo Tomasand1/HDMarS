@@ -42,18 +42,23 @@ def process_image(img=None):
     meditation(img[0, :])
 
 
-def process_image_download(url):
+def process_image_download(url, med_type, intensity, time):
     urllib.request.urlretrieve(url, 'assets/new_image.jpg')
 
     img = io.imread("../api/assets/new_image.jpg")
+
     img = rgb2gray(img)
     print(img)
     average_arr = []
     print(len((img[0, :])))
     for i in range(len((img[0, :]))):
         mean = statistics.mean((img)[:, i])
-        average_arr.append(mean*3)
+        average_arr.append(mean*2)
 
     print(average_arr)
-
-    study(average_arr)
+    if str.lower(med_type) == "meditation":
+        meditation(average_arr)
+    elif str.lower(med_type) == "study":
+        study(average_arr)
+    else:
+        pass

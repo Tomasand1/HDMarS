@@ -14,11 +14,6 @@ from pydub import AudioSegment
 def process():
     average_time = request.data
     image = Image.open(io.BytesIO(average_time)).convert('RGB')
-    #print(os.path.exists("/Users/atomas/Documents/Projects/ESA/api/assets/processed_file.wav"))
-    # if os.path.exists("/Users/atomas/Documents/Projects/ESA/api/assets/processed_file.wav"):
-    #     os.remove("/Users/atomas/Documents/Projects/ESA/api/assets/processed_file.wav")
-    # if os.path.exists("/Users/atomas/Documents/Projects/ESA/api/assets/processed_file.mp3"):
-    #     os.remove("/Users/atomas/Documents/Projects/ESA/api/assets/processed_file.mp3")
     process_image(image)
 
     return "success"
@@ -28,18 +23,20 @@ def process():
 def url():
     average_time = request.headers
     print((average_time['url']))
-    process_image_download(average_time['url'])
+    print(average_time['time'])
+    process_image_download(average_time['url'], average_time['type'], average_time['intensity'], average_time['time'])
 
-    return "average_time"
+    return "success"
 
 
 @app.route('/play')
 def index():
-    wav_audio = AudioSegment.from_file("/Users/atomas/Documents/Projects/ESA/api/assets/processed_file.wav",
+    rootdir = os.path.dirname(os.path.realpath(__file__)).rsplit(os.sep, 2)[0]
+    wav_audio = AudioSegment.from_file("%s/assets/processed_file.wav" % rootdir,
                                        format="wav")
-
-    wav_audio.export("/Users/atomas/Documents/Projects/ESA/api/assets/processed_file.mp3", format="mp3")
-    return send_file("/Users/atomas/Documents/Projects/ESA/api/assets/processed_file.mp3",
+    mp3_path = "%s/assets/processed_file.mp3" % rootdir
+    wav_audio.export(mp3_path, format="mp3")
+    return send_file(mp3_path,
                      mimetype="audio/mp3",
                      as_attachment=False,
                      attachment_filename="test.mp3")
