@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components/native';
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView, View } from 'react-native';
 import { topMessage } from '../Components/Global/TopMessage';
 import SoundPlayer from 'react-native-sound-player';
 import colors from '../Themes/Colors';
 import { Fonts, Metrics, Colors } from '../Themes';
 import { Title1, Caption } from '../Components/Typography';
+import LottieView from 'lottie-react-native';
 
 const MainPlayer = (props: any) => {
     const { route } = props;
@@ -25,13 +26,17 @@ const MainPlayer = (props: any) => {
 
     useEffect(() => {
         const url = route.params.image[0];
+        console.log(loading);
         setImageURL(url);
         setDescription(route.params.image[3]);
         setTitle(route.params.image[1]);
         setDate(route.params.image[2]);
         handleTimer();
+
         console.log('USE EFFECT TRIGGERED');
-    }, []);
+
+        loadFile();
+    }, [loading]);
 
     const setInit = async () => {
         const url = route.params.image[0];
@@ -81,8 +86,8 @@ const MainPlayer = (props: any) => {
         if (isPlaying) {
             stopFile();
         } else if (!played) {
-            setLoading(true);
-            playFile();
+            SoundPlayer.play();
+            setPlayed(true);
         } else {
             resumeFile();
         }
@@ -107,16 +112,16 @@ const MainPlayer = (props: any) => {
         }
     };
 
-    const playFile = async () => {
+    const loadFile = async () => {
         try {
             if (!played) {
                 console.log('PLAY FILE !PLAYED');
+                await SoundPlayer.loadUrl('https://ac932859160d.ngrok.io/play');
+                setTimeout(() => {
+                    setLoading(false);
+                }, 5000);
 
-                await SoundPlayer.playUrl('https://ac932859160d.ngrok.io/play');
                 console.log(loading);
-
-                setPlayed(true);
-                setLoading(false);
             }
         } catch (err) {
             console.log('cannot play the sound file', err);
@@ -131,7 +136,12 @@ const MainPlayer = (props: any) => {
         }, 1000);
         return () => clearInterval(interval);
     }, [timer, linePos, isPlaying]);
-
+    if (loading)
+        <LottieView
+            autoPlay
+            loop
+            source={require('../Assets/Animations/loading.json')}
+        />;
     return (
         <SafeAreaView>
             <MainView>
