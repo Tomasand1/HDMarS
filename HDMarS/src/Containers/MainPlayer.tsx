@@ -33,6 +33,18 @@ const MainPlayer = (props: any) => {
         console.log('USE EFFECT TRIGGERED');
     }, []);
 
+    const setInit = async () => {
+        const url = route.params.image[0];
+        setImageURL(url);
+        handleTimer();
+        setLinePos(0);
+        setIsPlaying(false);
+        setPlayed(false);
+        SoundPlayer.pause();
+        SoundPlayer.seek(0);
+        console.log('SET INIT');
+    };
+
     const handleTimer = () => {
         let timeriux = 0;
         if (route.params.time == 'One Minute') {
@@ -123,7 +135,10 @@ const MainPlayer = (props: any) => {
     return (
         <SafeAreaView>
             <MainView>
-                <CoverTouchable activeOpacity={0.9} onPress={handlePlay}>
+                <CoverTouchable
+                    disabled={timer === 0}
+                    activeOpacity={0.9}
+                    onPress={handlePlay}>
                     <VertLine style={{ left: linePos }} />
                     <CoverImage
                         source={{
@@ -138,22 +153,51 @@ const MainPlayer = (props: any) => {
                         <Description>{description}</Description>
                     </DescriptionScroll>
                 </DescriptionView>
-                <PlayButton activeOpacity={0.7} onPress={handlePlay}>
-                    <PlayText>
-                        {isPlaying
-                            ? loading
-                                ? 'Loading...'
-                                : 'Pause'
-                            : played
-                            ? 'Resume '
-                            : 'Play'}
-                    </PlayText>
-                    <PlayText time>{timer}s</PlayText>
-                </PlayButton>
+                <ButtonsView>
+                    <ChoiceText
+                        onPress={() =>
+                            props.navigation.navigate('LaunchScreen')
+                        }>
+                        Back
+                    </ChoiceText>
+                    <PlayButton
+                        disabled={timer === 0}
+                        activeOpacity={0.7}
+                        onPress={handlePlay}>
+                        <PlayText>
+                            {timer == 0
+                                ? 'Finished'
+                                : isPlaying
+                                ? loading
+                                    ? 'Loading...'
+                                    : 'Pause'
+                                : played
+                                ? 'Resume '
+                                : 'Play'}
+                        </PlayText>
+                        {timer !== 0 && <PlayText time>{timer}s</PlayText>}
+                    </PlayButton>
+                    <ChoiceText onPress={setInit}>Restart</ChoiceText>
+                </ButtonsView>
             </MainView>
         </SafeAreaView>
     );
 };
+
+const ButtonsView = styled.View`
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+`;
+
+const ChoiceText = styled.Text`
+    font-size: 15px;
+    font-family: ${Fonts.type.medium};
+    color: ${colors.tintColor};
+    text-align: center;
+    width: 80px;
+`;
 
 const VertLine = styled.View`
     width: 5px;
