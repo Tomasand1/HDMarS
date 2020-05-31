@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc3b01de-4545-4d25-a6c4-13d8da748d0d" name="Default Changelist" comment="add pyo and init workspace">
+      <change beforePath="$PROJECT_DIR$/../HDMarS/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../HDMarS/ios/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HDMarS/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../HDMarS/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HDMarS/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../HDMarS/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../HDMarS/src/RootContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../HDMarS/src/RootContainer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/new_image.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/new_image.jpg" afterDir="false" />
@@ -9,7 +12,6 @@
       <change beforePath="$PROJECT_DIR$/assets/processed_file.wav" beforeDir="false" afterPath="$PROJECT_DIR$/assets/processed_file.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/image_processor/process_image.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/image_processor/process_image.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/music_processor/process_music.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/music_processor/process_music.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/get.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/get.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +123,7 @@
       <workItem from="1590830395982" duration="210000" />
       <workItem from="1590830650175" duration="11678000" />
       <workItem from="1590846050233" duration="7052000" />
-      <workItem from="1590853631005" duration="20556000" />
+      <workItem from="1590853631005" duration="27534000" />
     </task>
     <task id="LOCAL-00001" summary="add pyo and init workspace">
       <created>1590837009421</created>
