@@ -17,6 +17,10 @@ import styled from 'styled-components/native';
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 
+let type = 'Meditate';
+let selectedTime = 'One Minute';
+let selectedIntensty = 'Slow';
+
 const xOffset = new Animated.Value(0);
 const opacityTransition = (index) => {
     return {
@@ -336,19 +340,28 @@ const Screen2 = (props) => {
                             full={picked == 'Meditate'}
                             image={require('../assets/images/meditate.png')}
                             text={'Meditate'}
-                            onPress={(text: string) => setPicked(text)}
+                            onPress={(text: string) => {
+                                type = text;
+                                setPicked(text);
+                            }}
                         />
                         <CircleButton
                             full={picked == 'Focus'}
                             image={require('../assets/images/focus.png')}
                             text={'Focus'}
-                            onPress={(text: string) => setPicked(text)}
+                            onPress={(text: string) => {
+                                type = text;
+                                setPicked(text);
+                            }}
                         />
                         <CircleButton
                             full={picked == 'Relax'}
                             image={require('../assets/images/relax.png')}
                             text={'Relax'}
-                            onPress={(text: string) => setPicked(text)}
+                            onPress={(text: string) => {
+                                type = text;
+                                setPicked(text);
+                            }}
                         />
                     </CircleView>
                 </Animated.View>
@@ -386,19 +399,28 @@ const Screen3 = (props) => {
                             full={intensity == 'Slow'}
                             image={require('../assets/images/slow.png')}
                             text={'Slow'}
-                            onPress={(text: string) => setIntensity(text)}
+                            onPress={(text: string) => {
+                                selectedIntensty = text;
+                                setIntensity(text);
+                            }}
                         />
                         <CircleButton
                             full={intensity == 'Medium'}
                             image={require('../assets/images/medium.png')}
                             text={'Medium'}
-                            onPress={(text: string) => setIntensity(text)}
+                            onPress={(text: string) => {
+                                selectedIntensty = text;
+                                setIntensity(text);
+                            }}
                         />
                         <CircleButton
                             full={intensity == 'Fast'}
                             image={require('../assets/images/fast.png')}
                             text={'Fast'}
-                            onPress={(text: string) => setIntensity(text)}
+                            onPress={(text: string) => {
+                                selectedIntensty = text;
+                                setIntensity(text);
+                            }}
                         />
                     </CircleView>
                 </Animated.View>
@@ -434,19 +456,28 @@ const Screen4 = (props) => {
                             full={time == 'One Minute'}
                             image={require('../assets/images/onemin.png')}
                             text={'One Minute'}
-                            onPress={(text: string) => setTime(text)}
+                            onPress={(text: string) => {
+                                selectedTime = text;
+                                setTime(text);
+                            }}
                         />
                         <CircleButton
                             full={time == 'Five Minutes'}
                             image={require('../assets/images/fivemin.png')}
                             text={'Five Minutes'}
-                            onPress={(text: string) => setTime(text)}
+                            onPress={(text: string) => {
+                                selectedTime = text;
+                                setTime(text);
+                            }}
                         />
                         <CircleButton
                             full={time == 'Seven Minutes'}
                             image={require('../assets/images/sevenmin.png')}
                             text={'Seven Minutes'}
-                            onPress={(text: string) => setTime(text)}
+                            onPress={(text: string) => {
+                                selectedTime = text;
+                                setTime(text);
+                            }}
                         />
                     </CircleView>
                 </Animated.View>
@@ -527,7 +558,13 @@ class GetStartedHandler extends Component {
                         index={3}
                     />
                     <Screen4
-                        onPress={() => this.props.navigation.navigate('Main')}
+                        onPress={() =>
+                            this.props.navigation.navigate('Main', {
+                                type,
+                                intensity: selectedIntensty,
+                                time: selectedTime,
+                            })
+                        }
                         lottieSource={require('./Assets/Animations/notification-state-off.json')}
                         index={4}
                     />

@@ -12,6 +12,7 @@ import colors from '../Themes/Colors';
 import { Fonts } from '../Themes';
 
 const Main = (props: any) => {
+    const { route } = props;
     const [images, setImages] = useState([] as any[]);
     const [texts, setTexts] = useState([] as any[]);
 
@@ -57,7 +58,7 @@ const Main = (props: any) => {
     }, []);
 
     const handleOnNext = (image: any) => {
-        props.navigation.navigate('LoadingScreen', { image });
+        props.navigation.navigate('LoadingScreen', { image, ...route.params });
     };
 
     return (

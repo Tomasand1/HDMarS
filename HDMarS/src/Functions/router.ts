@@ -31,6 +31,7 @@ const processUrl = async (
     intensity: string,
     time: number,
 ) => {
+    console.log('req', [type, intensity, time]);
     const response = await axios.post(
         'https://ac932859160d.ngrok.io/process-url',
         {},
@@ -38,9 +39,9 @@ const processUrl = async (
             headers: {
                 'content-type': 'application/json',
                 url,
-                time: 70,
-                type: 'meditation',
-                intensity: 'normal',
+                time,
+                type,
+                intensity,
             },
         },
     );

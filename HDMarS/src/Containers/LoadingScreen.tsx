@@ -27,7 +27,13 @@ const LoadingScreen = (props: any) => {
     const [loading, setLoading] = useState(true);
 
     const processImage = async (image: any) => {
-        await processUrl(image[0]);
+        console.log(route);
+        await processUrl(
+            image[0],
+            route.params.type,
+            route.params.intensity,
+            route.params.time,
+        );
 
         setLoading(false);
         handleOnNext(image);

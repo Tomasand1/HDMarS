@@ -56,9 +56,10 @@ def process_image_download(url, med_type, intensity, time):
         average_arr.append(mean*2)
 
     print(average_arr)
-    if str.lower(med_type) == "meditation":
+    if str.lower(med_type) == "meditate":
         meditation(average_arr)
-    elif str.lower(med_type) == "study":
+    elif str.lower(med_type) == "focus":
         study(average_arr)
     else:
-        pass
+        meditation(average_arr)
+
