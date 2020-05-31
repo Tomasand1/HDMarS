@@ -2,6 +2,7 @@ import React from 'react';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import LaunchScreen from '../LaunchScreen';
+import LoadingScreen from '../Containers/LoadingScreen';
 import Main from '../Containers/Main';
 
 const AppStack = createStackNavigator();
@@ -22,6 +23,10 @@ const AppNavigation = (): JSX.Element => {
                 initialRouteName="LaunchScreen">
                 <AppStack.Screen name="LaunchScreen" component={LaunchScreen} />
                 <AppStack.Screen name="Main" component={Main} />
+                <AppStack.Screen
+                    name="LoadingScreen"
+                    component={LoadingScreen}
+                />
             </AppStack.Navigator>
         </NavigationContainer>
     );
