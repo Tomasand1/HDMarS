@@ -8,7 +8,7 @@ import { topMessage } from '../Components/Global/TopMessage';
 import { processUrl } from '../Functions/router';
 import SoundPlayer from 'react-native-sound-player';
 
-const LaunchScreen = () => {
+const Main = (props: any) => {
     const [images, setImages] = useState([] as any[]);
     const [texts, setTexts] = useState([] as any[]);
 
@@ -80,4 +80,4 @@ const MainView = styled.ScrollView`
     /* justify-content: center; */
 `;
 
-export default LaunchScreen;
+export default Main;

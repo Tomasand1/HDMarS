@@ -11,7 +11,6 @@
 import React from 'react';
 import 'react-native-gesture-handler';
 import RootContainer from './RootContainer';
-import AppNavigation from './Navigation/AppNavigation';
 
 //TODO: remove me
 console.disableYellowBox = true;
