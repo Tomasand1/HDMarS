@@ -2,7 +2,7 @@ import React, { Component, useState } from 'react';
 import { Image, Animated, Dimensions, StyleSheet, View } from 'react-native';
 import Metrics from './Themes/Metrics';
 import Colors from './Themes/Colors';
-import { Title2, Body } from './Components/Typography';
+import { Title2, Body, Caption } from './Components/Typography';
 import logo from './Assets/app-icon.png';
 import createGroup from './Assets/team-launch.png';
 import app_launch from './Assets/appointment-launch.png';
@@ -293,11 +293,11 @@ const Screen1 = (props) => {
                 </Animated.View>
 
                 <Description
-                    speed={1.2}
+                    speed={2.2}
                     index={props.index}
                     title={'Welcome'}
                     line1={
-                        'We are introducing a new way to free your soul to the sounds of the Mars'
+                        'We are introducing a new way to free your soul to the sounds* of the Mars'
                     }
                 />
                 <Animated.View style={[opacityTransition(props.index)]}>
@@ -308,6 +308,22 @@ const Screen1 = (props) => {
                         alignSelf={'center'}
                     />
                 </Animated.View>
+                <Description
+                    speed={2.2}
+                    index={props.index}
+                    line1={
+                        'We will ask some questions to understand your mood, later selections of images will shape your experience'
+                    }
+                />
+                <Caption
+                    style={{
+                        width: 100,
+                        textAlign: 'center',
+                        alignSelf: 'center',
+                        paddingTop: 20,
+                    }}>
+                    *Created by Humans on Earth
+                </Caption>
                 <ProgressDots
                     colorIndex={1}
                     size={SCREEN_WIDTH * 0.01744}
@@ -357,7 +373,7 @@ const Screen2 = (props) => {
                         <CircleButton
                             full={picked == 'Relax'}
                             image={require('../assets/images/relax.png')}
-                            text={'Relax'}
+                            text={'Escape'}
                             onPress={(text: string) => {
                                 type = text;
                                 setPicked(text);
@@ -389,7 +405,7 @@ const Screen3 = (props) => {
                     index={props.index}
                     title={'Intensity'}
                     line1={
-                        'Boost or slow down your heart rate? Choose beat intensity'
+                        'Increase or reduce your heart rate? Choose beat intensity'
                     }
                 />
                 <Animated.View
@@ -519,7 +535,7 @@ class GetStartedHandler extends Component {
                 animated: true,
             });
             this.setState({ scrolleable: true });
-        }, 1000); //4000
+        }, 2500); //4000
     }
 
     static navigationOptions = {
