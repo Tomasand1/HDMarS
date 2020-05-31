@@ -8,7 +8,7 @@ from pandas import np
 from skimage import data, io, filters
 from skimage.color import rgb2gray
 
-from src.music_processor.process_music import process_music
+from src.music_processor.process_music import meditation, study
 
 matplotlib.rcParams['font.size'] = 18
 
@@ -39,7 +39,7 @@ def process_image(img=None):
     img = np.array(img)
     img = rgb2gray(img)
     print(len(img[0, :]))
-    process_music(img[0, :])
+    meditation(img[0, :])
 
 
 def process_image_download(url):
@@ -52,8 +52,8 @@ def process_image_download(url):
     print(len((img[0, :])))
     for i in range(len((img[0, :]))):
         mean = statistics.mean((img)[:, i])
-        average_arr.append(mean*10)
+        average_arr.append(mean*3)
 
     print(average_arr)
 
-    process_music(average_arr)
+    study(average_arr)
