@@ -25,7 +25,12 @@ const post = async (image: any) => {
         });
 };
 
-const processUrl = async (url: string) => {
+const processUrl = async (
+    url: string,
+    type: string,
+    intensity: string,
+    time: number,
+) => {
     const response = await axios.post(
         'https://ac932859160d.ngrok.io/process-url',
         {},
@@ -33,6 +38,9 @@ const processUrl = async (url: string) => {
             headers: {
                 'content-type': 'application/json',
                 url,
+                time: 70,
+                type: 'meditation',
+                intensity: 'normal',
             },
         },
     );
