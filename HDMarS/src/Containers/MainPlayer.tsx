@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components/native';
 import { StatusBar, Platform, SafeAreaView } from 'react-native';
 import FlashMessage from 'react-native-flash-message';
-import Metrics from './Theme/Global/Metrics';
-import Colors from './Theme/Global/Colors';
-import ImageTouchable from './Components/ImageTouchable';
-import { topMessage } from './Components/Global/TopMessage';
+import Metrics from '../Theme/Global/Metrics';
+import Colors from '../Theme/Global/Colors';
+import ImageTouchable from '../Components/ImageTouchable';
+import { topMessage } from '../Components/Global/TopMessage';
 import SoundPlayer from 'react-native-sound-player';
 
 const MainPlayer = () => {
