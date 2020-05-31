@@ -4,7 +4,7 @@ import { SafeAreaView } from 'react-native';
 import { topMessage } from '../Components/Global/TopMessage';
 import SoundPlayer from 'react-native-sound-player';
 import colors from '../Themes/Colors';
-import { Fonts, Metrics } from '../Themes';
+import { Fonts, Metrics, Colors } from '../Themes';
 import { Title1, Caption } from '../Components/Typography';
 
 const MainPlayer = (props: any) => {
@@ -21,6 +21,8 @@ const MainPlayer = (props: any) => {
 
     const [linePos, setLinePos] = useState(0);
 
+    const [adder, setAdder] = useState(0);
+
     useEffect(() => {
         const url = route.params.image[0];
         setImageURL(url);
@@ -32,13 +34,18 @@ const MainPlayer = (props: any) => {
     }, []);
 
     const handleTimer = () => {
+        let timeriux = 0;
         if (route.params.time == 'One Minute') {
-            setTimer(1 * 60);
+            timeriux = 1 * 60;
+            setTimer(timeriux);
         } else if (route.params.time == 'Five Minutes') {
-            setTimer(5 * 60);
+            timeriux = 5 * 60;
+            setTimer(timeriux);
         } else {
-            setTimer(7 * 60);
+            timeriux = 7 * 60;
+            setTimer(timeriux);
         }
+        setAdder(Metrics.screenWidth / 1.1 / timeriux);
     };
 
     const handleSeconds = () => {
@@ -50,7 +57,8 @@ const MainPlayer = (props: any) => {
                 stopFile();
             } else {
                 setTimer(timer - 1);
-                setLinePos(linePos + 1);
+                setLinePos(linePos + adder);
+                console.log('ODNA SECUNDA');
             }
         }
     };
@@ -110,7 +118,7 @@ const MainPlayer = (props: any) => {
             console.log('This will run every second!, linePos');
         }, 1000);
         return () => clearInterval(interval);
-    }, [timer, isPlaying]);
+    }, [timer, linePos, isPlaying]);
 
     return (
         <SafeAreaView>
@@ -148,9 +156,9 @@ const MainPlayer = (props: any) => {
 };
 
 const VertLine = styled.View`
-    width: 1px;
-    height: 1000px;
-    background-color: red;
+    width: 5px;
+    height: 350px;
+    background-color: ${Colors.white};
     position: absolute;
     z-index: 1;
 `;
@@ -170,7 +178,7 @@ const MainView = styled.View`
 
 const CoverTouchable = styled.TouchableOpacity`
     margin-top: 20px;
-    width: 90%;
+    width: ${Metrics.screenWidth / 1.1}px;
     height: 350px;
 `;
 
