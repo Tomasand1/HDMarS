@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { Image, Animated, Dimensions, StyleSheet, View } from 'react-native';
 import Metrics from './Themes/Metrics';
 import Colors from './Themes/Colors';
@@ -10,6 +10,8 @@ import relax from './Assets/create-group.png';
 
 import Fonts from './Themes/Fonts';
 import Button from './Components/Button';
+import CircleButton from './Components/CircleButton';
+import styled from 'styled-components/native';
 
 //
 const SCREEN_WIDTH = Dimensions.get('window').width;
@@ -149,28 +151,33 @@ const Circle = ({ background, size }) => (
     />
 );
 
-const CustomedImage = ({ source, visibility, width, height, alignSelf }) =>
+const CustomedImage = ({
+    source,
+    visibility,
+    width,
+    height,
+    alignSelf,
+    contain,
+}) =>
     visibility && (
         <Image
             source={source}
+            resizeMode={contain || 'cover'}
             style={{
                 alignSelf: alignSelf,
-                width: width,
-                height: height,
+                width: width || '70%',
+                height: height || 200,
             }}
         />
     );
 
 const Description = (props) => (
-    <View>
+    <View style={{ marginTop: 50 }}>
         <Animated.View style={[translateX(props.speed, props.index)]}>
             <Title2 style={styles.title}>{props.title}</Title2>
         </Animated.View>
         <Animated.View style={[translateX(props.speed - 0.2, props.index)]}>
             <Body style={styles.text}>{props.line1}</Body>
-        </Animated.View>
-        <Animated.View style={[translateX(props.speed - 0.6, props.index)]}>
-            <Body style={styles.text}>{props.line2}</Body>
         </Animated.View>
     </View>
 );
@@ -255,6 +262,13 @@ const Screen0 = (props) => {
                     style={[styles.textLogo, textLogoAnimation(props.index)]}>
                     {props.text}
                 </Animated.Text>
+                <Animated.Text
+                    style={[
+                        styles.textInfoLogo,
+                        textLogoAnimation(props.index),
+                    ]}>
+                    {props.textInfo}
+                </Animated.Text>
             </View>
         </View>
     );
@@ -273,23 +287,23 @@ const Screen1 = (props) => {
                         alignSelf={'center'}
                     />
                 </Animated.View>
-                <Animated.View
-                    style={[styles.text, opacityTransition(props.index)]}>
-                    <CustomedImage
-                        source={createGroup}
-                        visibility={true}
-                        width={1448 / 4}
-                        height={1024 / 4}
-                        alignSelf={'center'}
-                    />
-                </Animated.View>
+
                 <Description
                     speed={1.2}
                     index={props.index}
-                    title={'Team Management'}
-                    line1={'We are introducing a new way'}
-                    line2={'to manage your team.'}
+                    title={'Welcome'}
+                    line1={
+                        'We are introducing a new way to free your soul to the sounds of the Mars'
+                    }
                 />
+                <Animated.View style={[opacityTransition(props.index)]}>
+                    <CustomedImage
+                        contain={'contain'}
+                        source={require('../assets/images/bg.png')}
+                        visibility={true}
+                        alignSelf={'center'}
+                    />
+                </Animated.View>
                 <ProgressDots
                     colorIndex={1}
                     size={SCREEN_WIDTH * 0.01744}
@@ -303,27 +317,41 @@ const Screen1 = (props) => {
 };
 
 const Screen2 = (props) => {
+    const [picked, setPicked] = useState('Meditate');
+
     return (
         <View style={styles.scrollPage}>
             <Animated.View style={[styles.screen]}>
                 <View style={{ height: 310 / 2.7 }} />
-                <Animated.View
-                    style={[styles.text, opacityTransition(props.index)]}>
-                    <CustomedImage
-                        source={app_launch}
-                        visibility={true}
-                        width={1440 / 5}
-                        height={1305 / 5}
-                        alignSelf={'center'}
-                    />
-                </Animated.View>
                 <Description
                     speed={1.2}
                     index={props.index}
-                    title={'Location'}
-                    line1={'We use industry standard level security'}
-                    line2={'to keep your information protected.'}
+                    title={'Relaxation Type'}
+                    line1={'Our aim is to help you. Let us know your goal'}
                 />
+                <Animated.View
+                    style={[styles.text, opacityTransition(props.index)]}>
+                    <CircleView>
+                        <CircleButton
+                            full={picked == 'Meditate'}
+                            image={require('../assets/images/meditate.png')}
+                            text={'Meditate'}
+                            onPress={(text: string) => setPicked(text)}
+                        />
+                        <CircleButton
+                            full={picked == 'Focus'}
+                            image={require('../assets/images/focus.png')}
+                            text={'Focus'}
+                            onPress={(text: string) => setPicked(text)}
+                        />
+                        <CircleButton
+                            full={picked == 'Relax'}
+                            image={require('../assets/images/relax.png')}
+                            text={'Relax'}
+                            onPress={(text: string) => setPicked(text)}
+                        />
+                    </CircleView>
+                </Animated.View>
                 <ProgressDots
                     colorIndex={2}
                     size={SCREEN_WIDTH * 0.01744}
@@ -337,27 +365,43 @@ const Screen2 = (props) => {
 };
 
 const Screen3 = (props) => {
+    const [intensity, setIntensity] = useState('Slow');
+
     return (
         <View style={styles.scrollPage}>
             <Animated.View style={[styles.screen]}>
                 <View style={{ height: 310 / 2.7 }} />
-                <Animated.View
-                    style={[styles.text, opacityTransition(props.index)]}>
-                    <CustomedImage
-                        source={relax}
-                        visibility={true}
-                        width={SCREEN_WIDTH * 0.8}
-                        height={SCREEN_WIDTH * 0.8}
-                        alignSelf={'center'}
-                    />
-                </Animated.View>
                 <Description
                     speed={1.2}
                     index={props.index}
-                    title={'Notification'}
-                    line1={'We use industry standard level security'}
-                    line2={'to keep your information protected.'}
+                    title={'Intensity'}
+                    line1={
+                        'Boost or slow down your heart rate? Choose beat intensity'
+                    }
                 />
+                <Animated.View
+                    style={[styles.text, opacityTransition(props.index)]}>
+                    <CircleView>
+                        <CircleButton
+                            full={intensity == 'Slow'}
+                            image={require('../assets/images/slow.png')}
+                            text={'Slow'}
+                            onPress={(text: string) => setIntensity(text)}
+                        />
+                        <CircleButton
+                            full={intensity == 'Medium'}
+                            image={require('../assets/images/medium.png')}
+                            text={'Medium'}
+                            onPress={(text: string) => setIntensity(text)}
+                        />
+                        <CircleButton
+                            full={intensity == 'Fast'}
+                            image={require('../assets/images/fast.png')}
+                            text={'Fast'}
+                            onPress={(text: string) => setIntensity(text)}
+                        />
+                    </CircleView>
+                </Animated.View>
                 <ProgressDots
                     colorIndex={3}
                     size={SCREEN_WIDTH * 0.01744}
@@ -371,33 +415,49 @@ const Screen3 = (props) => {
 };
 
 const Screen4 = (props) => {
+    const [time, setTime] = useState('One Minute');
+
     return (
         <View style={styles.scrollPage}>
-            <Animated.View style={[styles.screen, { position: 'relative' }]}>
+            <Animated.View style={[styles.screen]}>
                 <View style={{ height: 310 / 2.7 }} />
-                <Animated.View
-                    style={[styles.text, opacityTransition(props.index)]}>
-                    <CustomedImage
-                        source={relax}
-                        visibility={true}
-                        width={SCREEN_WIDTH * 0.7}
-                        height={SCREEN_WIDTH * 0.7}
-                        alignSelf={'center'}
-                    />
-                </Animated.View>
                 <Description
                     speed={1.2}
                     index={props.index}
-                    title={'Notification'}
-                    line1={'We use industry standard level security'}
-                    line2={'to keep your information protected.'}
+                    title={'Duration'}
+                    line1={'How long are you planning to stay with us?'}
                 />
+                <Animated.View
+                    style={[styles.text, opacityTransition(props.index)]}>
+                    <CircleView>
+                        <CircleButton
+                            full={time == 'One Minute'}
+                            image={require('../assets/images/onemin.png')}
+                            text={'One Minute'}
+                            onPress={(text: string) => setTime(text)}
+                        />
+                        <CircleButton
+                            full={time == 'Five Minutes'}
+                            image={require('../assets/images/fivemin.png')}
+                            text={'Five Minutes'}
+                            onPress={(text: string) => setTime(text)}
+                        />
+                        <CircleButton
+                            full={time == 'Seven Minutes'}
+                            image={require('../assets/images/sevenmin.png')}
+                            text={'Seven Minutes'}
+                            onPress={(text: string) => setTime(text)}
+                        />
+                    </CircleView>
+                </Animated.View>
+
                 <Button mt={Metrics.space.xl} onPress={props.onPress}>
                     {' '}
                     Get Started!
                 </Button>
+
                 <ProgressDots
-                    colorIndex={4}
+                    colorIndex={3}
                     size={SCREEN_WIDTH * 0.01744}
                     initVal1={1}
                     initVal2={2}
@@ -407,41 +467,6 @@ const Screen4 = (props) => {
         </View>
     );
 };
-
-// const screenTransition = index => {
-//   return {
-//     opacity: xOffset.interpolate({
-//           inputRange: [
-//             (index - 1) * SCREEN_WIDTH,
-//             index * SCREEN_WIDTH,
-//             (index + 1) * SCREEN_WIDTH
-//           ],
-//           outputRange: [0, 1, 0]
-
-//       }),
-//     transform: [
-//       { perspective: 800 },
-//         {
-//           scale: xOffset.interpolate({
-//             inputRange: [(index - 1) * SCREEN_WIDTH, index * SCREEN_WIDTH, (index + 1) * SCREEN_WIDTH],
-//             outputRange: [0.25, 1, 0.25],
-//           }),
-//         },
-//         {
-//           rotateX: xOffset.interpolate({
-//             inputRange: [(index - 1) * SCREEN_WIDTH, index * SCREEN_WIDTH, (index + 1) * SCREEN_WIDTH],
-//             outputRange: ['45deg', '0deg', '45deg'],
-//           }),
-//         },
-//         {
-//           rotateY: xOffset.interpolate({
-//             inputRange: [(index - 1) * SCREEN_WIDTH, index * SCREEN_WIDTH, (index + 1) * SCREEN_WIDTH],
-//             outputRange: ['-45deg', '0deg', '45deg'],
-//           }),
-//         },
-//     ],
-//   };
-// };
 
 class GetStartedHandler extends Component {
     constructor(props) {
@@ -484,7 +509,11 @@ class GetStartedHandler extends Component {
                     showsHorizontalScrollIndicator={false}
                     pagingEnabled
                     style={styles.scrollView}>
-                    <Screen0 text="How does the Mars sound?" index={0} />
+                    <Screen0
+                        text="HDMarS"
+                        textInfo={'Team OutOfBounds 3.0 \nOn Behalf of NASA'}
+                        index={0}
+                    />
                     <Screen1
                         lottieSource={require('./Assets/Animations/work.json')}
                         index={1}
@@ -507,6 +536,14 @@ class GetStartedHandler extends Component {
         );
     }
 }
+
+const CircleView = styled.View`
+    height: ${SCREEN_HEIGHT / 3.5};
+    align-items: center;
+    /* background-color: red; */
+    flex-direction: row;
+    margin-left: -10px;
+`;
 
 const styles = StyleSheet.create({
     scrollView: {
@@ -544,7 +581,15 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         fontSize: Fonts.size.title1,
         fontWeight: 'bold',
-        marginBottom: SCREEN_HEIGHT - SCREEN_HEIGHT * 0.9,
+        marginBottom: SCREEN_HEIGHT - SCREEN_HEIGHT * 0.99,
+    },
+
+    textInfoLogo: {
+        fontFamily: Fonts.type.light,
+        color: Colors.darkGray,
+        alignItems: 'center',
+        marginBottom: 30,
+        textAlign: 'center',
     },
 
     title: {
@@ -560,6 +605,8 @@ const styles = StyleSheet.create({
         color: Colors.darkGray,
         alignSelf: 'center',
         fontSize: SCREEN_WIDTH * 0.04665,
+        textAlign: 'center',
+        width: '80%',
     },
 });
 export default GetStartedHandler;
